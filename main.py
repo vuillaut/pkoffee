@@ -1,11 +1,17 @@
+# Analysis of coffee consumption vs productivity with model fitting and visualization
+# claude.ai has been used to help generate this code.
+
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 from scipy.optimize import curve_fit
 from pathlib import Path
 import seaborn as sns
 
-data = pd.read_csv("coffee_productivity.csv")
+from plot import read_data
+
+FILENAME = "coffee_productivity.csv"
+data = read_data(FILENAME)
+
 X = data["cups"].values
 Y = data["productivity"].values
 
